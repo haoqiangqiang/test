@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header/>
+    <div class="main">
+      <Kaiguan/>
+      <Zhuangtai/>
+      <zhiling/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/kongzhi/header'
+import Kaiguan from './components/kongzhi/switch'
+import Zhuangtai from './components/kongzhi/style'
+import Zhiling from './components/kongzhi/zhiling'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Header,
+    Kaiguan,
+    Zhuangtai,
+    Zhiling
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+  }
 </style>

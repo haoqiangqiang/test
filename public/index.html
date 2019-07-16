@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>hello</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-switch.css">
+    <title>开关控制</title>
   </head>
   <body>
     <noscript>
@@ -14,4 +17,48 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/bootstrap-switch.js"></script>
+  <script>
+      $(document).ready(function(){
+          //基本初始化
+          $('#sw-content input').bootstrapSwitch();
+          //手动设置按钮状态
+          $('#sw-content input').bootstrapSwitch('state',false);
+          //点击触发事件，监听按钮状态
+          $('#sw-content input').on('switchChange.bootstrapSwitch',function(event,state){
+              //内置对象、内置属性
+              console.log(event);
+              //获取状态
+              console.log(state);
+          });
+      });
+  </script>
+  <script>
+      $("#Radioson1").attr("checked","checked");//默认第一个选中
+      $('input:radio[name="Radio"]').change(function () {
+          if($("#Radioson1").is(":checked")){
+              alert("更新成功，自动开启已关闭")
+          }
+          if($("#Radioson2").is(":checked")){
+              alert("更新成功，30分钟后将自动开启")
+          }
+          if($("#Radioson3").is(":checked")){
+              alert("更新成功，60分钟后将自动开启")
+          }
+      })
+      $("#Radiosoff1").attr("checked","checked");//默认第一个选中
+      $('input:radio[name="Radio1"]').change(function () {
+          if($("#Radiosoff1").is(":checked")){
+              alert("更新成功，自动关闭已关闭")
+          }
+          if($("#Radiosoff2").is(":checked")){
+              alert("更新成功，30分钟后将自动关闭")
+          }
+          if($("#Radiosoff3").is(":checked")){
+              alert("更新成功，60分钟后将自动关闭")
+          }
+      })
+  </script>
 </html>
